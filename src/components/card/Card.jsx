@@ -1,8 +1,10 @@
+import styles from '../card/card.module.css'
+
 const Card = ({products}) => {
     return (
-        <div>
+        <div className={styles.card}>
             {
-                products.map(product => {
+                products?.map(product => {
                     return(
                         <div key={product.id}>
                             <img src={product.image} alt="" />
