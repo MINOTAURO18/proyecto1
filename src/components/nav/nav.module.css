@@ -1,6 +1,6 @@
 .scrolled {
-    background:linear-gradient(130deg,  #f8f7f9, #ede7ed , #eae6ec);
-    
+    background:linear-gradient(130deg,  #ffffff, #f9f7f9 , #f5f4f6);
+    opacity: .9;
 }
 
 .scrolled a{

@@ -1,20 +1,24 @@
-import styles from '../card/card.module.css'
+import styles from "../card/card.module.css";
 
-const Card = ({products}) => {
-    return (
-        <div className={styles.card}>
-            {
-                products?.map(product => {
-                    return(
-                        <div key={product.id}>
-                            <img src={product.image} alt="" />
-                            <h1>{product.title}</h1>
-                        </div>
-                    )
-                })
-            }
-        </div>
-    )
-}
+const Card = ({ products }) => {
+  return (
+    <div className={styles.cards}>
+      {products?.map((product) => {
+        return (
+          <div className={styles.card} key={product.id}>
+            <div className={styles.img}>
+              <img src={product.image} alt="" />
+            </div>
+            <h1>{product.title}</h1>
+            <div>
+              <button>More</button>
+              <button>Buy</button>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 export default Card;
