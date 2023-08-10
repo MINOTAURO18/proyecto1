@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import Details from './views/details/Details'
+import Details from "./views/details/Details";
 import About from "./views/about/About.jsx";
 import Home from "./views/home/Home.jsx";
 import Nav from "./components/nav/Nav.jsx";
@@ -11,14 +11,14 @@ import "./App.css";
 function App() {
   const [products, setProducts] = useState({
     allProducts: [],
-    allProducts2: []
+    allProducts2: [],
   });
   const API = "https://fakestoreapi.com/products";
 
   useEffect(() => {
     fetch(API)
       .then((response) => response.json())
-      .then((data) => setProducts({allProducts: data, allProducts2: data}));
+      .then((data) => setProducts({ allProducts: data, allProducts2: data }));
   }, []);
   return (
     <>
@@ -29,7 +29,7 @@ function App() {
           element={
             <TransitionGroup>
               <CSSTransition key="home" classNames="fade" timeout={200}>
-                <Home  products={products} setProducts={setProducts} />
+                <Home products={products} setProducts={setProducts} />
               </CSSTransition>
             </TransitionGroup>
           }

@@ -25,7 +25,10 @@ const Home = ({ products, setProducts }) => {
        })
   };
   const handlerAll = () => {
-    setProducts(products)
+    setProducts({
+        ...products,
+        allProducts: products.allProducts2.filter(product => product)
+       })
   };
   return (
     <>
