@@ -1,28 +1,28 @@
-import { useState } from 'react'
-import { useEffect } from 'react'
-import { Routes, Route } from 'react-router-dom'
-import Home from './views/home/Home'
-import About from './views/about/About'
-import Nav from './components/nav/Nav'
+import { useState } from "react";
+import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./views/home/Home";
+import About from "./views/about/About";
+import Nav from "./components/nav/Nav";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import './App.css'
+import Details from './views/details/Details'
+import "./App.css";
 
 function App() {
-
-  const [products, setProducts] = useState([])
-  const API = 'https://fakestoreapi.com/products';
+  const [products, setProducts] = useState([]);
+  const API = "https://fakestoreapi.com/products";
 
   useEffect(() => {
     fetch(API)
-      .then(response => response.json())
-      .then(data => setProducts(data) )
-  }, [])
+      .then((response) => response.json())
+      .then((data) => setProducts(data));
+  }, []);
 
   return (
     <>
-      <Nav/>
+      <Nav />
       <Routes>
-      <Route
+        <Route
           path="/"
           element={
             <TransitionGroup>
@@ -42,9 +42,20 @@ function App() {
             </TransitionGroup>
           }
         />
+
+        <Route
+          path="/details/:id"
+          element={
+            <TransitionGroup>
+              <CSSTransition key="about" classNames="fade" timeout={200}>
+                <Details />
+              </CSSTransition>
+            </TransitionGroup>
+          }
+        />
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
