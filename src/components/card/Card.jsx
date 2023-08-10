@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom";
 const Card = ({ products }) => {
   return (
     <div className={styles.cards}>
-      {products?.map((product) => {
+      {products.allProducts?.map((product) => {
         return (
-          <div className={styles.card} key={product.id}>
+          <div className={styles.card} key={product.title}>
             <div className={styles.img}>
               <img src={product.image} alt="" />
             </div>
-            <h1>{product.title.split(" ", 4).join(" ")}</h1>
+            <h1>{product.title}</h1>
             <div>
               <NavLink to={`/details/${product.id}`}>
               <button>More</button>

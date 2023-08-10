@@ -8,3 +8,20 @@
     background-size: cover;
 }
 
+.btns{
+    width: 100%;
+    height: auto;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.btns button{
+    width: 100px;
+    height: 40px;
+    border: 2px solid black;
+}
+

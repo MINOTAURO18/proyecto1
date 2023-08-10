@@ -18,7 +18,7 @@ const Details = () => {
       <h3>{products.price}</h3>
       <h3>{products.description}</h3>
       <h3>{products.category}</h3>
-      <img src={products.image} alt={products.name} />
+      <img src={products.image} alt={products.id} />
     </div>
   );
 };
