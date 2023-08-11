@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Details from "./views/details/Details";
 import About from "./views/about/About.jsx";
@@ -9,6 +9,7 @@ import Nav from "./components/nav/Nav.jsx";
 import "./App.css";
 
 function App() {
+  const location = useLocation()
   const [products, setProducts] = useState({
     allProducts: [],
     allProducts2: [],
@@ -23,8 +24,10 @@ function App() {
   
   return (
     <>
-    
-      <Nav />
+    {
+      location.pathname === '/' ? <Nav style={{color: "white"}}/> : <Nav style={{color: "white"}}/>
+    }
+      {/* <Nav /> */}
       <Routes>
         <Route
           path="/"

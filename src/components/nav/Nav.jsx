@@ -20,7 +20,7 @@ const Nav = () => {
     };
   }, []);
   return (
-    <nav className={`${scrolled ? styles.scrolled : ''} w-full h-8vh  flex gap-6 justify-center items-center text-black text-2xl fixed z-10` }>
+    <nav className={`${scrolled ? styles.scrolled : ''} w-full h-8vh  flex gap-6 justify-center items-center  text-2xl fixed z-10` }>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/about">About</NavLink>
     </nav>
