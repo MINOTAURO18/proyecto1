@@ -1,0 +1,32 @@
+.details {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details article {
+  width: 90%;
+  height: auto;
+  max-width: 1000px;
+  border: 2px solid black;
+  padding: 2% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.details article img {
+  width: 350px;
+  max-height: 420px;
+}
+
+.details article div {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

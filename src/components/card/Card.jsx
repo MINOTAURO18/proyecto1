@@ -7,12 +7,12 @@ const Card = ({ products }) => {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(products.allProducts2.length / productsPerPage);
+  const totalPages = Math.ceil(products.allProducts.length / productsPerPage);
 
   const startIndex = (currentPage - 1) * productsPerPage;
   const endIndex = startIndex + productsPerPage;
 
-  const currentProducts = products.allProducts2.slice(startIndex, endIndex);
+  const currentProducts = products.allProducts.slice(startIndex, endIndex);
 
   const nextPage = () => {
     setCurrentPage((prevPage) => (prevPage === totalPages ? 1 : prevPage + 1));
@@ -29,18 +29,20 @@ const Card = ({ products }) => {
             <div className={styles.img}>
               <img src={product.image} alt="" />
             </div>
-            <h1>{product.title}</h1>
+            <h1>{product.title.split(' ', 3).join(' ')}</h1>
             <div>
               <NavLink to={`/details/${product.id}`}>
                 <button>More</button>
               </NavLink>
-              <button>Buy</button>
+              <NavLink to={`/details/${product.id}`}>
+                <button>Buy</button>
+              </NavLink>
             </div>
           </div>
         );
       })}
 
-      <div className="pagination">
+      <div className={styles.pagination}>
         <button onClick={previousPage} disabled={currentPage === 1}>
           Anterior
         </button>
