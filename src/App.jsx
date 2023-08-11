@@ -20,6 +20,7 @@ function App() {
       .then((response) => response.json())
       .then((data) => setProducts({ allProducts: data, allProducts2: data }));
   }, []);
+  
   return (
     <>
       <Nav />
@@ -56,6 +57,7 @@ function App() {
           }
         />
       </Routes>
+
     </>
   );
 }
